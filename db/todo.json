@@ -27,8 +27,8 @@
         "id": "58486a5a-547d-41fe-9838-2da523b55f40",
         "createdOn": "22.06.2022, 17:02:12",
         "caption": "do sport",
-        "description": "do sport",
-        "status": "in progress",
-        "priority": "low"
+        "description": "go to the gym",
+        "status": "pending",
+        "priority": "normal"
     }
 }
