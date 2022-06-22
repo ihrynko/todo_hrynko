@@ -4,7 +4,6 @@ const {
   formatErrorResponse,
 } = require("../services/http.service");
 const TodoModel = require("../models/todo.model");
-const TodoService = require("../services/todo.service");
 
 class TodoController {
   todoSchema = yup
@@ -30,7 +29,7 @@ class TodoController {
       priority: yup.mixed().oneOf(["urgent", "normal", "low"]).notRequired(),
     });
 
-  constructor(todoService = new TodoService()) {
+  constructor(todoService) {
     this.todoService = todoService;
   }
   getAllTodo = (req, res) => {
@@ -46,7 +45,7 @@ class TodoController {
 
   createTodo = async (req, res) => {
     try {
-      await todoSchema.validate(req.body);
+      await this.todoSchema.validate(req.body);
       const { caption, description, status, priority } = req.body;
       const model = new TodoModel(caption, description, status, priority);
       console.log(model);
@@ -61,7 +60,7 @@ class TodoController {
   updateTodo = async (req, res) => {
     try {
       const { id } = req.params;
-      await todoUpdateSchema.validate(req.body);
+      await this.todoUpdateSchema.validate(req.body);
       const update = req.body;
       const todo = this.todoService.updateTodo(id, update);
       return formatSuccessResponse(res, todo);
@@ -78,4 +77,4 @@ class TodoController {
   };
 }
 
-module.exports = new TodoController();
+module.exports = TodoController;

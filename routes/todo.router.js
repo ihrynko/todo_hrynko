@@ -6,16 +6,16 @@ const idRequiredMiddleware = require("../middlewares/id-required.middleware");
 
 const todoController = new TodoController(new TodoService());
 
-router.get("/", (...arg) => todoController.getAllTodo(...arg));
-router.get("/:id", idRequiredMiddleware, (...arg) =>
-  todoController.getTodo(...arg)
+router.get("/", (...args) => todoController.getAllTodo(...args));
+router.get("/:id", idRequiredMiddleware, (...args) =>
+  todoController.getTodo(...args)
 );
-router.post("/", (...arg) => todoController.createTodo(...arg));
-router.patch("/:id", idRequiredMiddleware, (...arg) =>
-  todoController.updateTodo(...arg)
+router.post("/", (...args) => todoController.createTodo(...args));
+router.patch("/:id", idRequiredMiddleware, (...args) =>
+  todoController.updateTodo(...args)
 );
-router.delete("/:id", idRequiredMiddleware, (...arg) =>
-  todoController.deleteTodo(...arg)
+router.delete("/:id", idRequiredMiddleware, (...args) =>
+  todoController.deleteTodo(...args)
 );
 
 module.exports = router;
