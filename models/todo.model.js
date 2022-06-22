@@ -8,7 +8,14 @@ class TodoModel extends BasicModel {
   status;
   priority;
 
-  constructor(caption, description, status, priority, createdOn, id) {
+  constructor(
+    caption,
+    description,
+    status,
+    priority,
+    createdOn = null,
+    id = null
+  ) {
     super();
     this.caption = caption;
     this.description = description;

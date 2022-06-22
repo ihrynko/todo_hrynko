@@ -22,13 +22,5 @@
         "description": "practise with nodejs",
         "status": "in progress",
         "priority": "urgent"
-    },
-    "58486a5a-547d-41fe-9838-2da523b55f40": {
-        "id": "58486a5a-547d-41fe-9838-2da523b55f40",
-        "createdOn": "22.06.2022, 17:02:12",
-        "caption": "do sport",
-        "description": "go to the gym",
-        "status": "pending",
-        "priority": "normal"
     }
 }
